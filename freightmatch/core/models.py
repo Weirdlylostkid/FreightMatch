@@ -1,0 +1,22 @@
+from django.db import models
+
+class Carrier(models.Model):
+    origin_postcode = models.CharField(max_length=20)
+    destination_postcode = models.CharField(max_length=20)
+    max_capacity = models.IntegerField()
+    available_capacity = models.IntegerField()
+    max_vol_length = models.IntegerField()
+    available_vol_length = models.IntegerField()
+    max_vol_breadth = models.IntegerField()
+    available_vol_breadth = models.IntegerField()
+    max_vol_height = models.IntegerField()
+    available_vol_height = models.IntegerField()
+    cost_per_cc_km = models.FloatField()
+    currency = models.CharField(max_length=10)
+    cost_margin = models.FloatField()
+    uom = models.CharField(max_length=20)
+    trip_start_datetime = models.DateTimeField()
+    trip_end_datetime = models.DateTimeField()
+    carrier_name = models.CharField(max_length=100)
+    cargo_allowable = models.CharField(max_length=50)
+    truck_type = models.CharField(max_length=50, null=True, blank=True)
